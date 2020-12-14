@@ -3,7 +3,6 @@ let boxLength = prompt(
   "Веедите длину прямоугольника. (предпочтительно значение от 1 до 10)",
   5
 );
-
 let boxWidth = prompt(
   "Веедите ширину прямоугольника. (предпочтительно значение от 1 до 10)",
   5
@@ -27,9 +26,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 // Обозначаем размеры прямоугольника
 const geometry = new THREE.BoxBufferGeometry(
-  `${boxLength}`,
-  `${boxHeight}`,
-  `${boxWidth}`
+  `${boxLength === "number" ? boxLength : 5}`,
+  `${boxHeight === "number" ? boxLength : 5}`,
+  `${boxWidth === "number" ? boxLength : 5}`
 );
 // Задается цвет созданной модели, так же можно вставить изображения.
 const material = new THREE.MeshBasicMaterial({ color: 0x808080 });
